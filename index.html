@@ -223,36 +223,56 @@
             margin-bottom: 20px;
         }
         
-        .quantity-selector {
+        .offer-options {
             margin-bottom: 25px;
         }
         
-        .quantity-selector label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .quantity-input {
-            display: flex;
-            align-items: center;
-        }
-        
-        .quantity-input button {
-            width: 40px;
-            height: 40px;
-            background-color: #f1f1f1;
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        
-        .quantity-input input {
-            width: 60px;
-            height: 40px;
-            text-align: center;
+        .offer-option {
             border: 1px solid #ddd;
-            margin: 0 5px;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .offer-option:hover {
+            border-color: #2a9d8f;
+        }
+        
+        .offer-option.recommended {
+            border: 2px solid #2a9d8f;
+            background-color: #f0f9f7;
+            position: relative;
+        }
+        
+        .recommended-badge {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background-color: #2a9d8f;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .offer-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .offer-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #e63946;
+        }
+        
+        .offer-savings {
+            font-size: 14px;
+            color: #2a9d8f;
+            font-weight: 500;
         }
         
         .add-to-cart {
@@ -602,12 +622,24 @@
                         <i class="fas fa-check-circle"></i> Em estoque (envio imediato)
                     </div>
                     
-                    <div class="quantity-selector">
-                        <label for="quantity">Quantidade:</label>
-                        <div class="quantity-input">
-                            <button id="decrease-qty">-</button>
-                            <input type="number" id="quantity" value="1" min="1">
-                            <button id="increase-qty">+</button>
+                    <div class="offer-options">
+                        <div class="offer-option">
+                            <div class="offer-title">1 Frasco (30 cápsulas)</div>
+                            <div class="offer-price">R$ 99,90</div>
+                            <div class="offer-savings">Economize R$ 0,00</div>
+                        </div>
+                        
+                        <div class="offer-option">
+                            <div class="offer-title">2 Frascos (60 cápsulas)</div>
+                            <div class="offer-price">R$ 179,80 <small>(R$ 89,90 cada)</small></div>
+                            <div class="offer-savings">Economize R$ 20,00</div>
+                        </div>
+                        
+                        <div class="offer-option recommended">
+                            <div class="recommended-badge">RECOMENDADO</div>
+                            <div class="offer-title">3 Frascos (90 cápsulas)</div>
+                            <div class="offer-price">R$ 239,70 <small>(R$ 79,90 cada)</small></div>
+                            <div class="offer-savings">Economize R$ 60,00</div>
                         </div>
                     </div>
                     
@@ -645,6 +677,15 @@
                     <li>Fornece energia e disposição para atividades físicas</li>
                     <li>Melhora o trânsito intestinal</li>
                     <li>Não causa efeitos colaterais como irritabilidade ou insônia</li>
+                </ul>
+                
+                <h3>Por que comprar 3 frascos?</h3>
+                <p>O tratamento completo com Lipo Turbo Extra Forte dura em média 3 meses para resultados significativos. Compre 3 frascos e garanta:</p>
+                <ul>
+                    <li>Economia de R$ 60,00 no valor total</li>
+                    <li>Frete grátis para todo Brasil</li>
+                    <li>Tratamento completo sem interrupções</li>
+                    <li>Melhores resultados com uso contínuo</li>
                 </ul>
             </div>
         </div>
@@ -838,17 +879,14 @@
     </footer>
     
     <script>
-        // Simples funcionalidade para aumentar/diminuir quantidade
-        document.getElementById('increase-qty').addEventListener('click', function() {
-            const input = document.getElementById('quantity');
-            input.value = parseInt(input.value) + 1;
-        });
+        // Simples funcionalidade para selecionar oferta
+        const offerOptions = document.querySelectorAll('.offer-option');
         
-        document.getElementById('decrease-qty').addEventListener('click', function() {
-            const input = document.getElementById('quantity');
-            if (parseInt(input.value) > 1) {
-                input.value = parseInt(input.value) - 1;
-            }
+        offerOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                offerOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+            });
         });
         
         // Simples troca de imagem ao clicar nas miniaturas
