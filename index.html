@@ -355,6 +355,32 @@
             margin-bottom: 20px;
         }
         
+        /* Informação Nutricional */
+        .nutritional-info {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .nutritional-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .nutritional-table th, 
+        .nutritional-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .nutritional-table th {
+            background-color: #f8f9fa;
+        }
+        
         /* Benefícios */
         .benefits-section {
             background-color: #fff;
@@ -389,32 +415,6 @@
             margin-bottom: 10px;
         }
         
-        /* Informação Nutricional */
-        .nutritional-info {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .nutritional-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        
-        .nutritional-table th, 
-        .nutritional-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .nutritional-table th {
-            background-color: #f8f9fa;
-        }
-        
         /* Footer */
         footer {
             background-color: #222;
@@ -424,7 +424,7 @@
         
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-bottom: 30px;
         }
@@ -477,6 +477,10 @@
             .benefits-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 768px) {
@@ -486,10 +490,6 @@
             
             .product-gallery, .product-info {
                 width: 100%;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
             }
             
             .logo img {
@@ -622,18 +622,6 @@
                     <button class="buy-now">
                         <i class="fas fa-bolt"></i> Comprar Agora
                     </button>
-                    
-                    <div class="payment-methods">
-                        <p>Formas de pagamento:</p>
-                        <div class="payment-icons">
-                            <img src="https://via.placeholder.com/40x25?text=Visa" alt="Visa">
-                            <img src="https://via.placeholder.com/40x25?text=Master" alt="Mastercard">
-                            <img src="https://via.placeholder.com/40x25?text=Amex" alt="American Express">
-                            <img src="https://via.placeholder.com/40x25?text=Elo" alt="Elo">
-                            <img src="https://via.placeholder.com/40x25?text=Boleto" alt="Boleto">
-                            <img src="https://via.placeholder.com/40x25?text=Pix" alt="Pix">
-                        </div>
-                    </div>
                     
                     <div class="delivery-info">
                         <p><i class="fas fa-truck"></i> Frete grátis para todo o Brasil em compras acima de R$ 150,00</p>
@@ -824,18 +812,6 @@
                         <li><a href="#">Status do Pedido</a></li>
                         <li><a href="#">Fale Conosco</a></li>
                     </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Formas de Pagamento</h3>
-                    <div class="payment-icons">
-                        <img src="https://via.placeholder.com/40x25?text=Visa" alt="Visa">
-                        <img src="https://via.placeholder.com/40x25?text=Master" alt="Mastercard">
-                        <img src="https://via.placeholder.com/40x25?text=Amex" alt="American Express">
-                        <img src="https://via.placeholder.com/40x25?text=Elo" alt="Elo">
-                        <img src="https://via.placeholder.com/40x25?text=Boleto" alt="Boleto">
-                        <img src="https://via.placeholder.com/40x25?text=Pix" alt="Pix">
-                    </div>
                 </div>
                 
                 <div class="footer-column">
