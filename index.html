@@ -234,6 +234,7 @@
             margin-bottom: 10px;
             cursor: pointer;
             transition: all 0.3s;
+            position: relative;
         }
         
         .offer-option:hover {
@@ -243,7 +244,6 @@
         .offer-option.selected {
             border: 2px solid #2a9d8f;
             background-color: #f0f9f7;
-            position: relative;
         }
         
         .offer-option.recommended {
@@ -614,23 +614,23 @@
                     </div>
                     
                     <div class="offer-options">
-                        <div class="offer-option" data-price="99.90" data-qty="1" data-sku="LIPO-1">
+                        <div class="offer-option" data-price="99.90" data-qty="1" data-sku="LIPO-1" data-checkout="https://go.disruptybr.com.br/typvipw6vn">
                             <div class="offer-title">1 Frasco (30 cápsulas)</div>
                             <div class="offer-price">R$ 99,90</div>
                             <div class="offer-savings">Frete calculado no checkout</div>
                         </div>
                         
-                        <div class="offer-option" data-price="179.80" data-qty="2" data-sku="LIPO-2">
+                        <div class="offer-option" data-price="179.80" data-qty="2" data-sku="LIPO-2" data-checkout="https://go.disruptybr.com.br/aa99y">
                             <div class="offer-title">2 Frascos (60 cápsulas)</div>
                             <div class="offer-price">R$ 179,80 <small>(R$ 89,90 cada)</small></div>
                             <div class="offer-savings">Economize R$ 20,00 + Frete Grátis</div>
                         </div>
                         
-                        <div class="offer-option recommended selected" data-price="239.70" data-qty="3" data-sku="LIPO-3">
+                        <div class="offer-option recommended selected" data-price="189.00" data-qty="3" data-sku="LIPO-3" data-checkout="https://go.disruptybr.com.br/misd">
                             <div class="recommended-badge">RECOMENDADO</div>
                             <div class="offer-title">3 Frascos (90 cápsulas)</div>
-                            <div class="offer-price">R$ 239,70 <small>(R$ 79,90 cada)</small></div>
-                            <div class="offer-savings">Economize R$ 60,00 + Frete Grátis</div>
+                            <div class="offer-price">R$ 189,00 <small>(R$ 63,00 cada)</small></div>
+                            <div class="offer-savings">Economize R$ 110,70 + Frete Grátis</div>
                         </div>
                     </div>
                     
@@ -669,7 +669,7 @@
                 <h3>Por que comprar 3 frascos?</h3>
                 <p>O tratamento completo com Lipo Turbo Extra Forte dura em média 3 meses para resultados significativos. Compre 3 frascos e garanta:</p>
                 <ul>
-                    <li>Economia de R$ 60,00 no valor total</li>
+                    <li>Economia de R$ 110,70 no valor total</li>
                     <li>Frete grátis para todo Brasil</li>
                     <li>Tratamento completo sem interrupções</li>
                     <li>Melhores resultados com uso contínuo</li>
@@ -872,16 +872,21 @@
         
         // Variável para armazenar a oferta selecionada
         let selectedOffer = {
-            price: 239.70,
+            price: 189.00,
             qty: 3,
-            sku: "LIPO-3"
+            sku: "LIPO-3",
+            checkoutUrl: "https://go.disruptybr.com.br/misd"
         };
         
         // Adiciona evento de clique para cada opção de oferta
         offerOptions.forEach(option => {
             option.addEventListener('click', function() {
-                // Remove a classe 'selected' de todas as opções
-                offerOptions.forEach(opt => opt.classList.remove('selected'));
+                // Remove a classe 'selected' de todas as opções (exceto recommended)
+                offerOptions.forEach(opt => {
+                    if(!opt.classList.contains('recommended')) {
+                        opt.classList.remove('selected');
+                    }
+                });
                 
                 // Adiciona a classe 'selected' apenas para a opção clicada
                 this.classList.add('selected');
@@ -890,21 +895,16 @@
                 selectedOffer = {
                     price: parseFloat(this.dataset.price),
                     qty: parseInt(this.dataset.qty),
-                    sku: this.dataset.sku
+                    sku: this.dataset.sku,
+                    checkoutUrl: this.dataset.checkout
                 };
-                
-                console.log("Oferta selecionada:", selectedOffer);
             });
         });
         
         // Evento de clique no botão Comprar Agora
         buyNowBtn.addEventListener('click', function() {
-            // Redireciona para o checkout com os parâmetros da oferta selecionada
-            window.location.href = `checkout.html?sku=${selectedOffer.sku}&qty=${selectedOffer.qty}&price=${selectedOffer.price}`;
-            
-            // Em um ambiente real, você enviaria esses dados para o seu sistema de checkout
-            // Aqui está apenas um exemplo de redirecionamento
-            // alert(`Redirecionando para o checkout com ${selectedOffer.qty} frascos por R$ ${selectedOffer.price.toFixed(2)}`);
+            // Redireciona para o checkout específico da oferta selecionada
+            window.location.href = selectedOffer.checkoutUrl;
         });
         
         // Simples troca de imagem ao clicar nas miniaturas
