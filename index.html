@@ -79,7 +79,7 @@
             font-size: 18px;
         }
         
-        /* Breadcrumb - ALTERAÇÃO SOLICITADA */
+        /* Breadcrumb */
         .breadcrumb {
             padding: 15px 0;
             font-size: 14px;
@@ -135,6 +135,7 @@
             display: flex;
             justify-content: center;
             gap: 10px;
+            flex-wrap: wrap;
         }
         
         .thumbnail {
@@ -388,6 +389,32 @@
             margin-bottom: 10px;
         }
         
+        /* Informação Nutricional */
+        .nutritional-info {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .nutritional-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .nutritional-table th, 
+        .nutritional-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .nutritional-table th {
+            background-color: #f8f9fa;
+        }
+        
         /* Footer */
         footer {
             background-color: #222;
@@ -529,21 +556,24 @@
                 <!-- Galeria de imagens -->
                 <div class="product-gallery">
                     <div class="main-image">
-                        <img src="https://via.placeholder.com/500x500?text=Lipo+Turbo+Extra+Forte" alt="Lipo Turbo Extra Forte">
+                        <img src="1.png" alt="Lipo Turbo Extra Forte - Imagem 1">
                     </div>
                     
                     <div class="thumbnail-container">
                         <div class="thumbnail">
-                            <img src="https://via.placeholder.com/100x100?text=Imagem+1" alt="Imagem 1">
+                            <img src="1.png" alt="Lipo Turbo Extra Forte - Imagem 1">
                         </div>
                         <div class="thumbnail">
-                            <img src="https://via.placeholder.com/100x100?text=Imagem+2" alt="Imagem 2">
+                            <img src="2.png" alt="Lipo Turbo Extra Forte - Informação Nutricional">
                         </div>
                         <div class="thumbnail">
-                            <img src="https://via.placeholder.com/100x100?text=Imagem+3" alt="Imagem 3">
+                            <img src="3.png" alt="Lipo Turbo Extra Forte - Modo de Uso">
                         </div>
                         <div class="thumbnail">
-                            <img src="https://via.placeholder.com/100x100?text=Imagem+4" alt="Imagem 4">
+                            <img src="4.png" alt="Lipo Turbo Extra Forte - Efeito Ozempic">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="5.png" alt="Lipo Turbo Extra Forte - Imagem 5">
                         </div>
                     </div>
                 </div>
@@ -551,7 +581,7 @@
                 <!-- Informações do produto -->
                 <div class="product-info">
                     <h1 class="product-title">Lipo Turbo Extra Forte</h1>
-                    <p class="product-subtitle">Emagrecedor Potente - 30 Cápsulas</p>
+                    <p class="product-subtitle">Suplemento Alimentar - 30 Cápsulas</p>
                     
                     <div class="product-rating">
                         <div class="stars">
@@ -596,8 +626,12 @@
                     <div class="payment-methods">
                         <p>Formas de pagamento:</p>
                         <div class="payment-icons">
-                            <img src="mcbc_refeicao-rev_84px.png" alt="Mastercard">
-                            <img src="pix-logo-png_seeklogo-392002.png" alt="Pix">
+                            <img src="https://via.placeholder.com/40x25?text=Visa" alt="Visa">
+                            <img src="https://via.placeholder.com/40x25?text=Master" alt="Mastercard">
+                            <img src="https://via.placeholder.com/40x25?text=Amex" alt="American Express">
+                            <img src="https://via.placeholder.com/40x25?text=Elo" alt="Elo">
+                            <img src="https://via.placeholder.com/40x25?text=Boleto" alt="Boleto">
+                            <img src="https://via.placeholder.com/40x25?text=Pix" alt="Pix">
                         </div>
                     </div>
                     
@@ -616,6 +650,9 @@
             <div class="description-content">
                 <p>O <strong>Lipo Turbo Extra Forte</strong> é a fórmula mais avançada para auxiliar no processo de emagrecimento saudável e acelerado. Desenvolvido com ingredientes naturais e de alta qualidade, este produto foi especialmente formulado para potencializar a queima de gordura, acelerar o metabolismo e controlar o apetite.</p>
                 
+                <h3>Composição:</h3>
+                <p>Quitosana, Morosil, L-Carnitina, Spirulina, Café Verde, Triptofano, Cromo, Colágeno, Psyllium e outros componentes naturais.</p>
+                
                 <h3>Benefícios do Lipo Turbo Extra Forte:</h3>
                 <ul>
                     <li>Acelera o metabolismo e a queima de gordura</li>
@@ -625,18 +662,85 @@
                     <li>Melhora o trânsito intestinal</li>
                     <li>Não causa efeitos colaterais como irritabilidade ou insônia</li>
                 </ul>
+            </div>
+        </div>
+        
+        <!-- Informação Nutricional -->
+        <div class="nutritional-info">
+            <h2 class="description-title">Informação Nutricional</h2>
+            <div class="description-content">
+                <table class="nutritional-table">
+                    <thead>
+                        <tr>
+                            <th>Ingrediente</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Quitosana</td>
+                            <td>100g</td>
+                        </tr>
+                        <tr>
+                            <td>Morosil</td>
+                            <td>100g</td>
+                        </tr>
+                        <tr>
+                            <td>L-carnitina</td>
+                            <td>50g</td>
+                        </tr>
+                        <tr>
+                            <td>Spirulina</td>
+                            <td>50g</td>
+                        </tr>
+                        <tr>
+                            <td>Café Verde</td>
+                            <td>50g</td>
+                        </tr>
+                        <tr>
+                            <td>Triptofano</td>
+                            <td>50g</td>
+                        </tr>
+                        <tr>
+                            <td>Cromo</td>
+                            <td>40g</td>
+                        </tr>
+                        <tr>
+                            <td>Colágeno</td>
+                            <td>40g</td>
+                        </tr>
+                        <tr>
+                            <td>Psyllium</td>
+                            <td>20g</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
-                <h3>Modo de Usar:</h3>
-                <p>Tomar <strong>1 cápsula antes do almoço</strong> e <strong>1 cápsula antes do jantar</strong>, acompanhada de um copo de água. Recomenda-se ingerir pelo menos 2 litros de água por dia para potencializar os efeitos do produto.</p>
-                
-                <h3>Composição:</h3>
-                <p>Quitosana, Psyllium, Garcinia Cambogia, Cafeína Anidra, Laranja Amarga, Chá Verde, Guaraná em Pó, Cromo e outros componentes naturais.</p>
+                <p><em>"Não contém quantidade significativa de valor energético, carboidratos, proteínas, gorduras totais, gorduras saturadas, gorduras trans, fibra alimentar e sódio."</em></p>
+                <p><strong>Porção diária:</strong> 500mg (1 cápsula)</p>
+            </div>
+        </div>
+        
+        <!-- Modo de Uso -->
+        <div class="product-description">
+            <h2 class="description-title">Modo de Uso</h2>
+            <div class="description-content">
+                <p><strong>Lipo Turbo Extra Forte</strong></p>
+                <ul>
+                    <li>Ingerir 1 cápsula após o café da manhã (até 10h para não dar insônia)</li>
+                    <li>Nunca tomar em jejum</li>
+                    <li>Beber no mínimo 2L de água por dia</li>
+                    <li>Alimentar-se sem pular refeições</li>
+                    <li>Não conciliar com bebidas alcoólicas</li>
+                    <li>Não conciliar com antibióticos</li>
+                </ul>
                 
                 <h3>Contraindicações:</h3>
-                <p>Não deve ser consumido por crianças, gestantes, lactantes, pessoas com hipertensão, problemas cardíacos ou hipersensibilidade a qualquer componente da fórmula. Consulte um médico antes de usar se estiver tomando qualquer medicamento. Mantenha fora do alcance de crianças.</p>
+                <p>Contraindicado para gestantes, lactantes, crianças, cardíacos, idosos acima de 70 anos.</p>
                 
-                <h3>Garantia:</h3>
-                <p>Garantimos a satisfação ou devolvemos seu dinheiro. Caso não fique satisfeito(a) com os resultados, devolveremos 100% do valor pago.</p>
+                <h3>Importante:</h3>
+                <p>O Lipo TURBO inibe quase toda a fome e as pessoas aproveitam isso para ficarem sem comer mas é um grande ERRO. Você tem que se alimentar, mesmo SEM FOME, seu corpo precisa de comida para viver. Você vai diminuir a quantidade de comida mas sem pular refeições.</p>
+                <p>Quando utilizamos suplementos diuréticos fazemos muito xixi e na urina eliminamos POTASSIO, importante repor com alimento e se hidratar, beber bastante água, ou até garorade e água de coco também.</p>
             </div>
         </div>
         
